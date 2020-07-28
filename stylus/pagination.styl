@@ -1,0 +1,27 @@
+
+/* mixin中不能直接调用@extend 需要用&明确指定是本身对象 */
++block(page)
+  width: 100%
+  user-select none
+  color: $page-color
+  &
+    @extend .row
+    @extend .justify--end
+
+    +modifier(left)
+      &
+        @extend .justify--left
+
+  +element(item)
+    height: 32px
+    min-width: @height
+    line-height: @height
+    text-align: center
+    border: 1px solid $gray['300']
+    border-radius: 2px
+    margin-right: 8px
+    cursor pointer
+    // transition: border-color .3s
+    // will-change: border-color
+    &:hover
+      border-color: $blue['300']

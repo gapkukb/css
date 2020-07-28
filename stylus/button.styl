@@ -1,0 +1,48 @@
++block(button)
+    border: 1px solid transparent
+    cursor: pointer
+    transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1)
+    user-select: none
+    touch-action: manipulation
+    border-radius: 2px
+    border-color: #d9d9d9
+    padding: ($button-padding / 2) $button-padding * 1.5
+    height: $button-default-height
+    min-width: $button-default-height
+    display: inline-flex
+
+    &
+        @extend .justify--center
+        @extend .items--center
+
+    +modifier(icon, only)
+        padding: 0
+
+    +modifier(small)
+        min-width: $gutter-md
+        height: $gutter-md
+        padding: 0 $button-padding * 1.5
+    +modifier(large)
+        min-width: $gutter-xl
+        height: $gutter-xl
+        padding: 6px $button-padding * 1.5
+
+    +modifier('round')
+        border-radius: 9999px
+
+    for $item in xs sm md lg xl
+        +modifier('round', $item)
+            border-radius: lookup('$gutter-' + $item)
+
+    +modifier('block')
+        display: block
+        width: 100%
+
+
+    +element(icon)
+        margin-right: ($gutter-xs / 2)
+
++block(button-group)
+    display: flex
+    color: #EAC59D
+    color: gold

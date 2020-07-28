@@ -1,0 +1,87 @@
++block(tooltip)
+    position: relative
+    $distance = 'calc(100% + %s)' % $tooltip-margin
+    $tooltip-margin = ($tooltip-margin / 2)
+    border: 1px solid blue
+
+    +element(body)
+        padding: $tooltip-padding
+        position: absolute
+        z-index: 1
+        background-color: $tooltip-background-color
+        color: $tooltip-color
+        white-space: nowrap
+        transition: 'visibility,transform,opacity' 0.3s
+        border-radius: 2px
+        visibility: hidden
+        opacity: 0
+        cursor: pointer
+        ~/:hover &
+            // will-change: visibility, transform, opacity
+            visibility: visible
+            opacity: 1
+
+        &:after
+            content: ''
+            position: absolute
+            border: $tooltip-arrow-width solid transparent
+
+        +group()
+            modifier(top)
+            modifier(bottom)
+            left: 50%
+            transform: translate(-50%, 0)
+
+            &:after
+                left: 50%
+                margin-left: - $tooltip-arrow-width
+
+        +modifier(top)
+            bottom: $distance
+
+            &:after
+                border-top-color: @background-color
+                top: 100%
+
+            ^[0]:hover &
+                transform: translate(-50%, (- $tooltip-margin))
+
+        +modifier(bottom)
+            top: $distance
+
+            &:after
+                border-bottom-color: @background-color
+                bottom: 100%
+
+            ^[0]:hover &
+                transform: translate(-50%, $tooltip-margin)
+
+        +group()
+            modifier(left)
+            modifier(right)
+            top: 50%
+            transform: translate(0, -50%)
+
+            &:after
+                top: 50%
+                margin-top: - $tooltip-arrow-width
+
+        +modifier(left)
+            right: $distance
+
+            &:after
+                border-left-color: @background-color
+                left: 100%
+
+            ^[0]:hover &
+                transform: translate((- $tooltip-margin), -50%)
+
+        +modifier(right)
+            left: $distance
+
+            &:after
+                border-right-color: @background-color
+                right: 100%
+
+            ^[0]:hover &
+                transform: translate($tooltip-margin, -50%)

@@ -1,0 +1,114 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- <meta http-equiv="X-UA-Compatible" content="ie=edge"> -->
+  <title>Document</title>
+  <link rel="stylesheet" href="./gm.min.css">
+</head>
+<style>
+  .col>div {
+    background-color: red;
+  }
+
+  input[type=checkbox] {
+    width: 1em;
+    height: 1em;
+    border: 2px solid red;
+    border-radius: 3px;
+  }
+</style>
+
+<body style="padding: 100px;">
+  <div class="button-group">
+    <button class="button">我是一个按钮</button>
+    <button class="button button--icon-only">
+      <svg viewbox="0 0 100 100" width="1em" height="1em">
+        <circle cx="50" cy="50" r="40" stroke="grey" stroke-width="10" fill="none" />
+      </svg>
+    </button>
+    <button class="button">
+      <svg viewbox="0 0 100 100" width="1em" height="1em" class="button__icon">
+        <circle cx="50" cy="50" r="40" stroke="grey" stroke-width="10" fill="none" />
+      </svg>
+      <span>你好啊</span>
+    </button>
+
+  </div>
+  <div class="button-group">
+    <button class="button button--round">我是一个按钮</button>
+    <button class="button button--icon-only button--round">
+      <svg viewbox="0 0 100 100" width="1em" height="1em">
+        <circle cx="50" cy="50" r="40" stroke="grey" stroke-width="10" fill="none" />
+      </svg>
+    </button>
+    <button class="button button--round-xs"> <span>你好啊</span>
+    <button class="button button--round-sm"> <span>你好啊</span>
+    <button class="button button--round-md"> <span>你好啊</span>
+    <button class="button button--round-lg"> <span>你好啊</span>
+    <button class="button button--round-xl"> <span>你好啊</span>
+    </button>
+
+  </div>
+  <div>
+    <button class="button button--large">我是一个按钮</button>
+    <button class="button button">我是一个按钮</button>
+    <button class="button button--small">我是一个按钮</button>
+
+  </div>
+  <button class="button button--block"> <span>你好啊</span>
+  <button class="button button--block button--small"> <span>你好啊</span>
+
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <div class="tooltip">
+    <span>鼠标移动到这里</span>
+    <div class="tooltip__body tooltip__body--top">
+      这是真的吗
+    </div>
+  </div>
+  <div class="tooltip">
+    <span>鼠标移动到这里</span>
+    <div class="tooltip__body tooltip__body--bottom">
+      prompt text prompt text
+    </div>
+  </div>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <div class="row" style="background-color: red;">
+
+
+    <div class="tooltip">
+      <span>鼠标移动到这里</span>
+      <div class="tooltip__body tooltip__body--left">
+        prompt text prompt text
+      </div>
+    </div>
+    <div class="tooltip">
+      <span>鼠标移动到这里</span>
+      <div class="tooltip__body tooltip__body--right">
+        prompt text prompt text
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>

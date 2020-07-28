@@ -1,0 +1,41 @@
+
+$items = $merge($justify-content, $align-items)
+
+for $k, $v in $justify-content
+  .{BEM(justify, , $k)}
+    justify-content: $v
+
+  .{BEM(self, v, $k)}
+    justify-content: $v
+
+for $k, $v in $align-items
+  .{BEM(items, , $k)}
+    align-items: $v
+
+  .{BEM(self, h, $k)}
+    align-items: $v
+
+for $k, $v in $items
+  .{BEM(content, , $k)}
+    align-content: $v
+
++block(row)
+  display: flex
+  flex-wrap: wrap
+  align-items: flex-start
+  &:after
+    content: ''
+    display: table
+    clear: both
+
+  +modifier(inline)
+    display: inline-flex
+
+.col
+  float: left
+  min-width: 1px
+
+.{BEM(gutter, , spacing)}
+  margin: 0
+
+grid()

@@ -1,0 +1,54 @@
++block('table')
+  border-collapse: collapse
+  border-spacing: 0
+  text-align: left
+  width: 100%
+  resize: horizontal
+
+  td, th
+    padding: $table-cell-padding
+
+  tr
+    // transition: background-color 0.5s
+
+    &:hover
+      background-color: $table-hover-color !important
+
+  +modifier('response')
+    width: 100%
+    overflow-x: auto
+
+  +modifier('border')
+    $border = 1px solid $table-border-color
+
+    th, td
+      border: $border
+
+    &_row
+      tr
+        border: $border
+
+    &_col
+      border: $border
+
+      th, td
+        border-right: $border
+
+  +modifier('striped')
+    tr:nth-child(2n)
+      background-color: $table-striped-color
+
+
+  +modifier('dense')
+    td, th
+      padding: ($table-cell-padding / 2)
+
+  +element('header')
+    background-color: $table-header-background-color
+
+  +element('title')
+    position relative
+
+  +element(filter)
+    position: relative
+

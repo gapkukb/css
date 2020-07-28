@@ -1,0 +1,17 @@
+
+// @supports (display:grid)
+//   .row
+//       display: grid
+//       width: 100%
+//       grid-template-columns:repeat($grid-count,1fr)
+//     for n in 1...$grid-count+1
+//       .{BEM(col,"",n)}
+//         grid-column-end:span n
+//       .{BEM(offset,"",n)}
+//         margin-left: tofixed(n)
+
+
+//   for $item in xs sm md lg xl
+//       $v = lookup("$gutter-"+$item)
+//       .{BEM(gutter,,$item)}
+//         gap $v;
