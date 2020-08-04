@@ -1,0 +1,100 @@
+{
+  "id": "1631020",
+  "name": "暂时",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "14234353",
+      "name": "已撤销",
+      "font_class": "yichexiao",
+      "unicode": "e604",
+      "unicode_decimal": 58884
+    },
+    {
+      "icon_id": "14234305",
+      "name": "未通过",
+      "font_class": "weitongguo",
+      "unicode": "e600",
+      "unicode_decimal": 58880
+    },
+    {
+      "icon_id": "14234306",
+      "name": "已通过",
+      "font_class": "yitongguo",
+      "unicode": "e607",
+      "unicode_decimal": 58887
+    },
+    {
+      "icon_id": "14234327",
+      "name": "审核中",
+      "font_class": "shenhezhong",
+      "unicode": "e608",
+      "unicode_decimal": 58888
+    },
+    {
+      "icon_id": "14225680",
+      "name": "未标题-1",
+      "font_class": "plus",
+      "unicode": "e606",
+      "unicode_decimal": 58886
+    },
+    {
+      "icon_id": "11175164",
+      "name": "警报 报警",
+      "font_class": "jingbao",
+      "unicode": "e67e",
+      "unicode_decimal": 59006
+    },
+    {
+      "icon_id": "14110080",
+      "name": "记录",
+      "font_class": "jilu",
+      "unicode": "e603",
+      "unicode_decimal": 58883
+    },
+    {
+      "icon_id": "2973608",
+      "name": "emoji",
+      "font_class": "emoji",
+      "unicode": "e65f",
+      "unicode_decimal": 58975
+    },
+    {
+      "icon_id": "3202105",
+      "name": "emoji",
+      "font_class": "emoji1",
+      "unicode": "e601",
+      "unicode_decimal": 58881
+    },
+    {
+      "icon_id": "8021426",
+      "name": "emoji1",
+      "font_class": "emoji2",
+      "unicode": "e602",
+      "unicode_decimal": 58882
+    },
+    {
+      "icon_id": "8273824",
+      "name": "Emoji Doubt 1 (2)",
+      "font_class": "emoji4",
+      "unicode": "e9d9",
+      "unicode_decimal": 59865
+    },
+    {
+      "icon_id": "9250587",
+      "name": "emoji",
+      "font_class": "emoji3",
+      "unicode": "e605",
+      "unicode_decimal": 58885
+    },
+    {
+      "icon_id": "15367",
+      "name": "下三角形",
+      "font_class": "xiasanjiao",
+      "unicode": "e642",
+      "unicode_decimal": 58946
+    }
+  ]
+}

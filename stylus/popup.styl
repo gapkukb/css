@@ -1,0 +1,84 @@
+$animation-during = 0.5s
+$border = 1px solid #eee
+
++block(popup)
+    &
+        @extend .overlay
+        align-items: flex-start
+        visibility: hidden
+        transition: visibility $animation-during, z-index $animation-during
+        padding: 10px
+
+    +element(main)
+        // padding: $gutter-sm
+        overflow: auto
+        background-color: #fff
+        transition: transform $animation-during
+        box-shadow: 0 0 10px 0 #999
+
+        +modifier(center)
+            width: 300px
+            border-radius: $global-border-radius
+            margin: auto
+            border-radius: $global-border-radius
+            transform: translate3d(0, 0, 0) scale(0)
+
+        +modifier(top)
+            width: 100%
+            max-height: 60vh
+            border-radius: 0 0 $global-border-radius $global-border-radius
+            transform: translate3d(0, -100%, 0)
+
+        +modifier(bottom)
+            width: 100%
+            max-height: 60vh
+            margin-top: auto
+            border-radius: $global-border-radius $global-border-radius 0 0
+            transform: translate3d(0, 100%, 0)
+
+        +modifier(left)
+            height: 100%
+            max-width: 300px
+            transform: translate3d(-100%, 0, 0)
+
+        +modifier(right)
+            height: 100%
+            margin-left: auto
+            max-width: 300px
+            transform: translate3d(100%, 0, 0)
+
+        ../
+            +modifier(show)
+                transition: visibility $animation-during, z-index $animation-during $animation-during
+                visibility: visible
+                z-index: 999
+
+                &>^[1]
+                    will-change: transform
+                    transform: translate3d(0, 0, 0) scale(1)
+
+    +element(header)
+        font-weight bold
+        text-align: center
+        padding: $gutter-sm
+        padding-bottom: 0
+
+    +element(body)
+        padding: $gutter-sm
+        text-align: center
+
+    +element(footer)
+        +modifier(border)
+            border-top: $border
+
+            button+button
+                border-left: $border
+
+    +element(header)
+        +modifier(border)
+            border-bottom: $border
+            padding-bottom: $gutter-sm
+
+    +element(close)
+        position: absolute
+        right: $gutter-sm

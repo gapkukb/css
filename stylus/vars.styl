@@ -1,19 +1,21 @@
 // @import '~stylus-bem-sugar/bem-sugar.styl'
-$points = {
+$points ?= {
   xs: 0,
   sm: 600px,
   md: 1024px,
   lg: 1440px,
   xl: 1920px
 }
-$grid-count = 24
-$max-font-size = 48
-$gutter-xs = 8px
-$gutter-sm = 16px
-$gutter-md = 24px
-$gutter-lg = 32px
-$gutter-xl = 40px
-$justify-content = {
+$grid-count ?= 24
+$max-font-size ?= 48
+$gutter-xs ?= 8px
+$gutter-sm ?= 16px
+$gutter-md ?= 24px
+$gutter-lg ?= 32px
+$gutter-xl ?= 40px
+$sizes ?= keys($points)
+$responsive ?= true
+$justify-content ?= {
   left: flex-start,
   end: flex-end,
   between: space-between,
@@ -22,133 +24,133 @@ $justify-content = {
   stretch: stretch,
   center: center
 }
-$align-items = {
+$align-items ?= {
   top: flex-start,
   bottom: flex-end,
   center: center,
   stretch: stretch,
   baseline: baseline
 }
-$red = {
+$red ?= {
   '100': #FFCDD2,
   '300': #E57373,
   '500': #F44336,
   '700': #D32F2F,
   '900': #B71C1C
 }
-$pink = {
+$pink ?= {
   '100': #F8BBD0,
   '300': #F06292,
   '500': #E91E63,
   '700': #C2185B,
   '900': #880E4F
 }
-$purple = {
+$purple ?= {
   '100': #E1BEE7,
   '300': #BA68C8,
   '500': #9C27B0,
   '700': #7B1FA2,
   '900': #4A148C
 }
-$deep-purple = {
+$deep-purple ?= {
   '100': #D1C4E9,
   '300': #9575CD,
   '500': #673AB7,
   '700': #512DA8,
   '900': #311B92
 }
-$indigo = {
+$indigo ?= {
   '100': #C5CAE9,
   '300': #7986CB,
   '500': #3F51B5,
   '700': #303F9F,
   '900': #1A237E
 }
-$blue = {
+$blue ?= {
   '100': #BBDEFB,
   '300': #64B5F6,
   '500': #2196F3,
   '700': #1976D2,
   '900': #0D47A1
 }
-$light-blue = {
+$light-blue ?= {
   '100': #B3E5FC,
   '300': #4FC3F7,
   '500': #03A9F4,
   '700': #0288D1,
   '900': #01579B
 }
-$cyan = {
+$cyan ?= {
   '100': #B2EBF2,
   '300': #4DD0E1,
   '500': #00BCD4,
   '700': #0097A7,
   '900': #006064
 }
-$teal = {
+$teal ?= {
   '100': #B2DFDB,
   '300': #4DB6AC,
   '500': #009688,
   '700': #00796B,
   '900': #004D40
 }
-$green = {
+$green ?= {
   '100': #C8E6C9,
   '300': #81C784,
   '500': #4CAF50,
   '700': #388E3C,
   '900': #1B5E20
 }
-$light-green = {
+$light-green ?= {
   '100': #DCEDC8,
   '300': #AED581,
   '500': #8BC34A,
   '700': #689F38,
   '900': #33691E
 }
-$lime = {
+$lime ?= {
   '100': #F0F4C3,
   '300': #DCE775,
   '500': #CDDC39,
   '700': #AFB42B,
   '900': #827717
 }
-$yellow = {
+$yellow ?= {
   '100': #FFF9C4,
   '300': #FFF176,
   '500': #FFEB3B,
   '700': #FBC02D,
   '900': #F57F17
 }
-$amber = {
+$amber ?= {
   '100': #FFECB3,
   '300': #FFD54F,
   '500': #FFC107,
   '700': #FFA000,
   '900': #FF6F00
 }
-$orange = {
+$orange ?= {
   '100': #FFE0B2,
   '300': #FFB74D,
   '500': #FF9800,
   '700': #F57C00,
   '900': #E65100
 }
-$deep-orange = {
+$deep-orange ?= {
   '100': #FFCCBC,
   '300': #FF8A65,
   '500': #FF5722,
   '700': #E64A19,
   '900': #BF360C
 }
-$brown = {
+$brown ?= {
   '100': #D7CCC8,
   '300': #A1887F,
   '500': #795548,
   '700': #5D4037,
   '900': #3E2723
 }
-$gray = {
+$gray ?= {
   '50': #FAFAFA,
   '100': #F5F5F5,
   '200': #EEEEEE,
@@ -160,14 +162,14 @@ $gray = {
   '800': #424242,
   '900': #212121
 }
-$blue-gray = {
+$blue-gray ?= {
   '100': #CFD8DC,
   '300': #90A4AE,
   '500': #607D8B,
   '700': #455A64,
   '900': #263238
 }
-$colors = {
+$colors ?= {
   red: $red,
   pink: $pink,
   purple: $purple,
@@ -190,80 +192,44 @@ $colors = {
   black: #000000,
   white: #ffffff
 }
+/* global */
+$global-border-radius ?= 2px
+$border = 0.33px solid rgba(0, 0, 0, 0.1)
 /* body-defaut */
-$body-font-size = 14px
-$body-background-color = $gray['50']
-$body-color = $gray['900']
-$body-line-height = 1.5
-$body-font-family = "Roboto, Noto, Helvetica, 'Hiragino Sans GB', 'Microsoft Yahei', '微软雅黑', Arial, sans-serif;"
+$body-font-size ?= 14px
+$body-background-color ?= $gray['50']
+$body-color ?= $gray['900']
+$body-line-height ?= 1.5
+$body-font-family ?= system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji
 /* table */
-$table-striped-color = $gray['100']
-$table-hover-color = $gray['200']
-$table-row-active-color = $blue-gray['100']
-$table-border-color = $gray['400']
-$table-header-background-color = $table-hover-color
-$table-cell-padding = $gutter-xs
-/* page */
-$page-color = $gray['500']
-/* tooltip */
-$tooltip-color = $body-background-color
-$tooltip-background-color = rgba($gray['900'], 0.85)
-$tooltip-arrow-width = 5px
-$tooltip-margin = $gutter-xs
-$tooltip-padding = $gutter-xs
-/* button */
-$button-color = $body-background-color
-$button-padding = $gutter-xs
-$button-types = {
-
+$table-title = {
+  font-size: 16px,
+  font-weight: bold,
+  padding: $gutter-sm
 }
-$button-small-height=$gutter-md
-$button-default-height=$gutter-lg
-$button-large-height=$gutter-xl
-
-
-
-BEM(b, e = '', m = '', m2 = '')
-  $e = e ? '_' + e : e
-  $m = m ? '--' + m : m
-  $m2 = m2 ? '--' + m2 : m2
-  return b + $e + $m + $m2
-
-prefix(n)
-  n ? '-' + n : ''
-
-$merge()
-  $list = {}
-
-  for $arg in arguments
-    for $key, $item in $arg
-      $list[$key] = $item
-
-  return $list
-
-grid($point = '')
-  for n in 1...$grid-count + 1
-    $percent = tofixed(n)
-
-    .{BEM(col, , $point, n)}
-      width: $percent
-
-    .{BEM(offset, , $point, n)}
-      margin-left: $percent
-
-  for item in xs sm md lg xl
-    $v = (lookup('$gutter-' + item) / 1)
-
-    .{BEM(gutter, , $point, item)}
-      // margin: - $v
-      >.col
-        // padding: $v
-        padding-bottom: $v
-        padding-right: $v
-transition(properties, duration, animate = null)
-  $str = '', animate = animate ? ' ' + animate : ''
-
-  for $i in split(',', properties)
-    $str += $i + ' ' + duration + animate + ','
-
-  transition: s($str)
+$table-title-color ?= null
+$table-header-bgc ?= $blue-gray['100']
+$table-header-font-size ?= null
+$table-footer-bgc ?= lighten($blue-gray['100'], 10)
+$table-footer-font-size ?= null
+$table-striped-color ?= $gray['200']
+$table-hover-color ?= $gray['300']
+$table-row-active-color ?= $blue-gray['300']
+$table-border-color ?= $gray['400']
+$table-cell-padding ?= $gutter-xs
+$table-bg ?= $body-background-color
+/* page */
+$page-color ?= $gray['500']
+/* tooltip */
+$tooltip-color ?= $body-background-color
+$tooltip-background-color ?= rgba($gray['900'], 0.85)
+$tooltip-arrow-width ?= 5px
+$tooltip-margin ?= $gutter-xs
+$tooltip-padding ?= $gutter-xs
+/* button */
+$button-color ?= $body-background-color
+$button-padding ?= $gutter-xs
+$button-types ?= {}
+$button-small-height ?= $gutter-md
+$button-default-height ?= $gutter-lg
+$button-large-height ?= $gutter-xl

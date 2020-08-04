@@ -1,0 +1,104 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="./gm.min.css">
+    <style>
+        ul {
+            padding-left: 10px;
+        }
+
+        li {
+            transition: transform .3s;
+            border-bottom: 1px solid #ccc;
+        }
+
+        a {
+            padding: 10px;
+            padding-right: 0;
+            display: block;
+            text-transform: capitalize;
+            transition: transform .3s;
+        }
+
+        li.active a,
+        li:hover a {
+            color: dodgerblue;
+            transform: translateX(-10px);
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+    <ul class="layout">
+        <li><a href="/overview.html" target="main">overview 概览</a></li>
+        <li><a href="/button.html" target="main">button 按钮</a></li>
+        <li><a href="/table.html" target="main">table 表格</a></li>
+        <li><a href="/overlay.html" target="main">overlay 遮罩</a></li>
+        <li><a href="/flex.html" target="main">flex 伸缩布局</a></li>
+        <li><a href="/layout.html" target="main">layout 布局</a></li>
+        <li><a href="/dropdown.html" target="main">dropdown 下拉选项</a></li>
+        <li><a href="/loading.html" target="main">loading 加载</a></li>
+        <li><a href="/panel.html" target="main">panel 面板</a></li>
+        <li><a href="/popup.html" target="main">popup 弹层</a></li>
+        <li><a href="/tooltip.html" target="main">tooltip 提示框</a></li>
+        <li><a href="/tabs.html" target="main">tabs 面板</a></li>
+        <li><a href="/input.html" target="main">input 输入框</a></li>
+        <li><a href="/emoji.html" target="main">emoji 表情</a></li>
+        <li><a href="/skeleton.html" target="main">skeleton</a></li>
+        <li><a href="/skeleton.html" target="main">skeleton</a></li>
+        <li><a href="/skeleton.html" target="main">skeleton</a></li>
+        <li><a href="/skeleton.html" target="main">skeleton</a></li>
+        <li><a href="/skeleton.html" target="main">skeleton</a></li>
+        <li><a href="/skeleton.html" target="main">skeleton</a></li>
+        <li><a href="/skeleton.html" target="main">skeleton</a></li>
+        <li><a href="/skeleton.html" target="main">skeleton</a></li>
+        <li><a href="/skeleton.html" target="main">skeleton</a></li>
+        <li><a href="/skeleton.html" target="main">skeleton</a></li>
+        <li><a href="/skeleton.html" target="main">skeleton</a></li>
+        <li><a href="/skeleton.html" target="main">skeleton</a></li>
+        <li><a href="/skeleton.html" target="main">skeleton</a></li>
+        <li><a href="/skeleton.html" target="main">skeleton</a></li>
+        <li><a href="/skeleton.html" target="main">skeleton</a></li>
+        <li><a href="/skeleton.html" target="main">skeleton</a></li>
+        <li><a href="/skeleton.html" target="main">skeleton</a></li>
+        <li><a href="/skeleton.html" target="main">skeleton</a></li>
+        <li><a href="/skeleton.html" target="main">skeleton</a></li>
+        <li><a href="/skeleton.html" target="main">skeleton</a></li>
+        <li><a href="/skeleton.html" target="main">skeleton</a></li>
+        <li><a href="/skeleton.html" target="main">skeleton</a></li>
+        <li><a href="/skeleton.html" target="main">skeleton</a></li>
+        <li><a href="/skeleton.html" target="main">skeleton</a></li>
+        <li><a href="/skeleton.html" target="main">skeleton</a></li>
+        <li><a href="/skeleton.html" target="main">skeleton</a></li>
+        <li><a href="/skeleton.html" target="main">skeleton</a></li>
+        <li><a href="/skeleton.html" target="main">skeleton</a></li>
+        <li><a href="/skeleton.html" target="main">skeleton</a></li>
+        <li><a href="/skeleton.html" target="main">skeleton</a></li>
+        <li><a href="/skeleton.html" target="main">skeleton</a></li>
+        <li><a href="/skeleton.html" target="main">skeleton</a></li>
+        <li><a href="/skeleton.html" target="main">skeleton</a></li>
+    </ul>
+</body>
+<script>
+    var lastActiveLink = document.querySelector("a[href='" + (window.localStorage.getItem("linked") || "overview.html") + "']").closest('li')
+    lastActiveLink.className = "active"
+    document.querySelector(".layout").onclick = function (e) {
+        var target = e.target, nodeName = target.nodeName.toLowerCase()
+        if (nodeName === 'ul') return;
+        if (nodeName !== 'li') {
+            target = target.closest('li')
+        }
+        lastActiveLink.className = ""
+        target.className = 'active'
+        lastActiveLink = target
+        let url = new URL(target.firstChild.href).pathname
+        window.localStorage.setItem("linked", url)
+    }
+</script>
+
+</html>

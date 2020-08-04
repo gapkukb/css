@@ -10,10 +10,12 @@ const reload = browserSync.reload;
 const del = require('del')
 const autoprefixer = require('gulp-autoprefixer')
 const stylusBemSugar = require('stylus-bem-sugar');
+const changed = require('gulp-changed');
 
 const err = e => plumber({ errorHandler: notify.onError('Error: <%= error.message %>') })
 const html = () => gulp
   .src(config.html.src)
+  .pipe(changed(config.html.dist))
   .pipe(err())
   .pipe(gulp.dest(config.html.dist))
   .pipe(reload({ stream: true }))
@@ -31,17 +33,20 @@ const css = () => gulp
 
 const js = () => gulp
   .src(config.js.src)
+  .pipe(changed(config.js.dist))
   .pipe(err())
   .pipe(gulp.dest(config.js.dist))
   .pipe(reload({ stream: true }))
 
 const images = () => gulp
   .src(config.images.src)
+  .pipe(changed(config.images.dist))
   .pipe(gulp.dest(config.images.dist))
   .pipe(reload({ stream: true }))
 
 const copy = () => gulp
-  .src(config.copy.src, { base: config.src })
+  .src(config.copy.src, { base: './public' })
+  .pipe(changed(config.copy.dist))
   .pipe(gulp.dest(config.copy.dist))
   .pipe(reload({ stream: true }))
 

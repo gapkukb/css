@@ -8,6 +8,21 @@ html
   -webkit-tap-highlight-color: transparent
   -webkit-overflow-scrolling: touch
   -ms-overflow-style: -ms-autohiding-scrollbar
+  overflow-y: scroll
+
+body
+  font: $body-font-size / $body-line-height $body-font-family
+  background-color: $body-background-color
+  -webkit-font-smoothing: subpixel-antialiased
+  width: 100vw
+  overflow: hidden
+
+:root
+  overflow-y: auto
+  overflow-x: hidden
+
+:root body
+  position: absolute
 
 h1, h2, h3, h4, h5, h6
   font-size: 1em
@@ -72,17 +87,48 @@ progress
   -webkit-appearance: none /* 1 */
   font: inherit
 
-[disabled]
-  opacity: 0.8 !important
-  cursor: not-allowed !important
-
 table
   font-size: 100%
 
 th
   text-align: inherit
 
-body
-  font: $body-font-size / $body-line-height $body-font-family
-  background-color: $body-background-color
-  -webkit-font-smoothing: subpixel-antialiased
+img, svg
+  vertical-align: middle
+  margin-top: -0.12em
+
+// ::-webkit-scrollbar
+// width: 10px
+// height: 10px
++block(ske)
+  width: 300px
+  height: 100px
+  position: relative
+
+  +modifier('round')
+    border-radius: 50%
+
+  &:empty
+    background: rgba(0, 0, 0, 0.12)
+    overflow: hidden
+
+    &:after
+      content: ''
+      position: absolute
+      top: 0
+      right: 0
+      bottom: 0
+      left: 0
+      z-index: 0
+      background: linear-gradient(90deg, transparent, hsla(0, 0%, 100%, 0.5), transparent)
+      animation: ske--wave 4s linear 2s infinite
+
+@keyframes ske--wave
+  0%
+    transform: translateX(-100%)
+
+  50%
+    transform: translateX(100%)
+
+  100%
+    transform: translateX(100%)

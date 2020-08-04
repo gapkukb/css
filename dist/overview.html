@@ -1,0 +1,199 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Frameset//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-frameset.dtd">
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- <meta http-equiv="X-UA-Compatible" content="ie=edge"> -->
+  <title>Document</title>
+  <link rel="stylesheet" href="./gm.min.css">
+  <link rel="stylesheet" href="./css/iconfont.css">
+  <script src="./js/iconfont.js"></script>
+  <style>
+    body {
+      padding: 10px;
+    }
+    .icon {
+       width: 1em; height: 1em;
+       vertical-align: -0.15em;
+       fill: currentColor;
+       overflow: hidden;
+       font-size: 400px;
+    }
+
+    .container {
+      padding-bottom: 40px;
+    }
+
+    input[type=text] {
+      border: 1px solid gray;
+    }
+
+    a {
+      color: green;
+    }
+  </style>
+</head>
+
+<body>
+  IE css hack
+  <svg class="icon">
+    <use xlink:href="#01alarm"></use>
+  </svg>
+  <div>@media rules applied in this browser:</div>
+  <div class="container">
+    <h5>表格中文对齐,如:
+      <a href="https://www.zhangxinxu.com/wordpress/2015/01/tips-blank-character-chinese-align/">点此参考</a>
+    </h5>
+    <ul>
+      <li class="li">姓&emsp;&emsp;名：<input type="text" /></li>
+      <li class="li">手&ensp;机&ensp;号：<input type="text" /></li>
+      <li class="li">电子邮箱：<input type="text" /></li>
+    </ul>
+  </div>
+  <div class="container">
+    <h5>css背景图片半透明，chrome和移动端支持不错</h5>
+    cross-fade 属性 <a href="https://www.zhangxinxu.com/wordpress/2020/07/css-cross-fade-background-image-opacity/">参考</a>
+  </div>
+  <h5>使用CSS <a href="https://www.zhangxinxu.com/wordpress/2020/06/css-text-emphasis/">text-emphasis</a> 对文字进行强调装饰 兼容性不太好
+  </h5>
+  <h5>起点中文那种多页文字滑动切换，最方便的是使用 column 多列布局 。也适合用来做瀑布流</h5>
+  <h5>使用css mask-image 进一步压缩优化图片，移动端 <a
+      href="https://www.zhangxinxu.com/wordpress/2020/05/css-mask-compress-png-image/">参考</a></h5>
+  <h5>使用css min() max() clamp() 函数实现css计算，可结合calc()使用 <a
+      href="https://www.zhangxinxu.com/wordpress/2020/04/css-min-max-clamp/">参考</a></h5>
+  <h5> 使用.emoji emoji表情 </h5>
+  <p class="emoji">😀</p>
+
+  <h5>JS从CSS中获取变量，通过document.body的伪元素content值：getComputedStyle(document.body, '::before').content;或者通过css变量var mode =
+    getComputedStyle(document.documentElement).getPropertyValue('--mode').trim();<a
+      href="https://www.zhangxinxu.com/wordpress/2020/02/css-params-to-js/">参考</a></h5>
+  <div class="container">
+    <h5>用css区分PC和移动端 <a href="https://www.zhangxinxu.com/wordpress/2020/01/css-any-hover-media/">参考</a></h5>
+    <pre>
+      @media (any-hover: none) {
+        //不支持hover
+        .example-zxx {
+          text-decoration: none;
+          background-color: #ffffe0;
+        }
+      }
+      @media (any-hover: hover) {
+        //支持hover
+        .example-zxx {
+          text-decoration: underline;
+        }
+      }
+    </pre>
+  </div>
+  <div class="container">
+    <h5>scroll-snap 实现在滚动元素后，元素自动吸附到边界。常见于移动端轮播图手指移动一点后，当前轮播项自动吸附到边缘 <a
+        href="https://www.zhangxinxu.com/wordpress/2018/11/know-css-scroll-snap/">参考</a></h5>
+  </div>
+  <div class="container">
+    <h5>flex 属性 <a href="https://www.zhangxinxu.com/wordpress/2019/12/css-flex-deep/">参考</a></h5>
+    <p>flex是flex-grow，flex-shrink和flex-basis的缩写。</p>
+    <p>flex-grow 空间有剩余时是否增长(flex-grow：0不增加，flex-grow：1增加1份，flex-grow：2增加2份)</p>
+    <p>flex-shrink 空间有不足时是否压缩(flex-grow：0不压缩，flex-grow：1压缩1份，flex-grow：2压缩2份)</p>
+    <p>flex-basis 正常情况下空间长度。</p>
+    <p>默认flex:0 1 auto,表示空间富余不增加，空间不足压缩，正常情况下宽度就是元素本身宽度</p>
+    <p>
+      flex简写：1值表示设置flex-grow,其他两个属性使用默认值，2个值-第一个值flex-grow，第二个值是数字时表示flex-shrink，是带单位的长度时表示flex-basic，3个值时分别表示grow,shrink,basic
+    </p>
+  </div>
+  <div class="container">
+    <h5>minmax() 函数 <a href="https://www.zhangxinxu.com/wordpress/2019/11/css-grid-minmax/">参考</a></h5>
+    <p>用在grid布局中，同时指定元素的最大宽度和最小宽度</p>
+
+  </div>
+  <div class="container">
+    <h5>image-set() 函数 <a href="https://www.zhangxinxu.com/wordpress/2019/11/css-image-set/">参考</a></h5>
+    <p>css中根据条件（如1倍屏，2倍屏）分别加载展示不同的背景图片</p>
+  </div>
+  <div class="container">
+    <h5>backdrop-filter <a href="https://www.zhangxinxu.com/wordpress/2019/11/css-backdrop-filter/">参考</a></h5>
+    <p>css 的backdrop-filter属性可以实现背景模糊，他的语法和filter一模一样，区别是filter作用本身，backdrop-filter作用于背景下方的元素</p>
+  </div>
+  <div class="container">
+    <h5>css无外链原则 <a href="https://www.zhangxinxu.com/wordpress/2019/08/css-no-external-link/">参考</a></h5>
+    <p>css文件中的icon不使用http请求，全部使用base64内联，优先选择svg图片格式，图标比较多就用svg sprites技术</p>
+    <p>svg内联css IE兼容 <a
+        href="https://www.zhangxinxu.com/wordpress/2018/08/css-svg-background-image-base64-encode/">参考</a></p>
+  </div>
+  <div class="container">
+    <h5>flex多行布局中justify-around等情况下最后一列保持左对齐的方法 <a
+        href="https://www.zhangxinxu.com/wordpress/2019/08/css-flex-last-align/">参考</a></h5>
+    <p>利用伪元素after并设置flex：1. 不过暂时想不到应用场景</p>
+    <div class="row justify--around justify--last-left" id="test">
+      <div class="col col--12 col--sm-8 col--md-6 col--lg-4">121</div>
+      <div class="col col--12 col--sm-8 col--md-6 col--lg-4">121</div>
+      <div class="col col--12 col--sm-8 col--md-6 col--lg-4">121</div>
+      <div class="col col--12 col--sm-8 col--md-6 col--lg-4">121</div>
+      <div class="col col--12 col--sm-8 col--md-6 col--lg-4">121</div>
+      <div class="col col--12 col--sm-8 col--md-6 col--lg-4">121</div>
+      <div class="col col--12 col--sm-8 col--md-6 col--lg-4">121</div>
+      <div class="col col--12 col--sm-8 col--md-6 col--lg-4">121</div>
+      <div class="col col--12 col--sm-8 col--md-6 col--lg-4">121</div>
+      <div class="col col--12 col--sm-8 col--md-6 col--lg-4">121</div>
+    </div>
+  </div>
+  <div class="container">
+    <h5>逻辑伪类选择器 <a href="https://www.zhangxinxu.com/wordpress/2019/07/css-not-pseudo-class/">参考</a></h5>
+    <div>
+      <p>:not()，:is()，:where() 等逻辑伪类选择器没有优先级（匹配权重），他的优先级取决于内部表达式的优先级（匹配权重）。</p>
+      <p>如:not(#test) 优先级取决于#test而不是:not</p>
+    </div>
+  </div>
+  <div class="container">
+    <h5>css filter 用法 <a href="https://www.zhangxinxu.com/wordpress/2019/06/fdcon2019-css-share/">参考</a></h5>
+    <div>
+      <p>封面图变得模糊，然后作为背景图。</p>
+      <p>是弹框出现的时候，让弹框背后的元素模糊，从而让视觉更聚焦。</p>
+      <p>filter:drop-shadow 可以让任意的图形区域，只要是非透明的都能产生投影效果，</p>
+      <p>filter:grayscale 将彩色图片变灰，主要用于实现点亮徽章或者评分这种彩色和灰色图片切换的场景</p>
+      <p>结合mask-image局部模糊，径向模糊 平常我们实现的高斯模糊，都是整体模糊，实际上我们是可以实现局部模糊和径向模糊效果的。</p>
+      <p>filter: brightness(100); 图标的变色 例如一个图标背景图希望从深色变成白色</p>
+      <p>filter: brightness(100); 图标的变色 例如一个图标背景图希望从深色变成白色</p>
+    </div>
+  </div>
+  <div class="container">
+    <h5>css mix-blend-mode 文字反色（阴阳色：半黑半白），多张图片，图片和视频等互相进行滤镜混合 <a
+        href="https://www.zhangxinxu.com/study/201904/css-filter-blend/difference.php">参考</a></h5>
+    <div>
+      mix-blend-mode: difference;
+      mix-blend-mode: screen;
+    </div>
+  </div>
+  <div class="container">
+    <h5>css background-blend-mode 为背景图片添加颜色 <a
+        href="https://www.zhangxinxu.com/study/201904/css-filter-blend/difference.php">参考</a></h5>
+    <div>
+      background-blend-mode: lighten;/* background-color是什么颜色，图标就表现为什么颜色 */
+    </div>
+  </div>
+  <div class="container">
+    <h5>SVG粘滞融合分享菜单（超赞） <a href="https://www.zhangxinxu.com/study/201712/gooey-share.html">参考</a></h5>
+    <div>
+      background-blend-mode: lighten;/* background-color是什么颜色，图标就表现为什么颜色 */
+    </div>
+  </div>
+  <div class="container">
+    <h5>不规则形状布局 <a href="https://www.zhangxinxu.com/wordpress/2019/04/css-parallelogram-layout/">参考</a></h5>
+    <div>
+      CSS Shapes布局。可以用来实现各种不规则的css布局。不如三角形布局，平行四边形布局，菱形，五边形。。。等特殊布局
+    </div>
+  </div>
+  <div class="container">
+    <h5>各种css新奇技能 <a href="https://www.zhangxinxu.com/wordpress/2016/11/css-content-pre-animation-character-loading/">参考</a></h5>
+
+  </div>
+
+
+
+
+
+
+
+</body>
+
+</html>

@@ -1,61 +1,147 @@
++block(square)
+  position: relative
+  overflow: hidden
 
-
-for $v in left right none
-    .{BEM(float,"",$v)}
-      float: $v
-
-for $item in visible auto scroll overlay
-  for $sub in "" x y
-    .{BEM(over,$sub,$item)}
-      overflow{prefix($sub)} $item
-.square
-  position relative
-  overflow hidden
-  &--overable
-    overflow visible
   &:before
-    content: ""
-    padding-top:100%;
-    display:inline-block;
+    content: ''
+    padding-top: 100%
+    display: inline-block
     vertical-align: middle
-  &--img
+
+  +modifier(overable)
+    overflow: visible
+
+  +modifier(img)
     text-align: center
+
     >img
       vertical-align: middle
-  &_view
-    &--center
-      position absolute
-      left 50%
-      top 50%
-      transform translate(-50%,-50%)
-      width fit-content
 
+  +modifier(view, center)
+    position: absolute
+    left: 50%
+    top: 50%
+    transform: translate(-50%, -50%)
+    width: fit-content
 
++block(border)
+  +modifier(dashed)
+    border-style: dashed
 
+  +modifier(dotted)
+    border-style: dashed
 
+  +modifier(current)
+    border-color: currentColor
 
-// gutter(item,n)
-//   .gutter__{item}
-//       margin-right - n
-//       margin-bottom - n
-//       >.col
-//         margin-right n
-//         margin-bottom n
-//       for number in 1...$grid-count
-//         $percent = floor(percentage(number/$grid-count),3)
-//         >.col-{number}
-//           flex: 0 0 "calc(%s - %s)" % ($percent n)
+  $dirs(border, $border)
 
-// +prefix-classes('cm-')
-//   .row
-//     display flex
-//     flex-flow: row wrap
-//   .col
-//     float left
-//     min-width: 0
-//   col()
+  +modifier(none)
+    border: 0
 
++block(radius)
+  border-radius: 9999px
 
-//   for item,index in xs sm md lg xl
-//     gutter(item,lookup("$gutter-"+item))
+  for item in keys($points)
+    +modifier(item)
+      border-radius: lookup('$gutter-' + item)
 
++block(pad)
+  for item in keys($points)
+    $dirs(padding, item, lookup('$gutter-' + item))
+
+  +modifier(none)
+    padding: 0
+
++block(mg)
+  for item in keys($points)
+    $dirs(margin, item, lookup('$gutter-' + item))
+
+  +modifier(none)
+    margin: 0
+
++block(image)
+  position: relative
+  display: inline-block
+
+  +modifier('round')
+    border-radius: 999px
+    overflow: hidden
+
+  >img
+    display: block
+    width: 100%
+    height: 100%
+
+  +element(cover)
+    object-fit: cover
+
+  +element(fill)
+    object-fit: fill
+
+  +element(cotain)
+    object-fit: contain
+
+  +element(none)
+    object-fit: none
+
+  +element(scale-down)
+    object-fit: scale-down
+
++block(mouse)
+  for item in pointer move zoom-in zoom-out not-allowed
+    +modifier(item)
+      cursor: item
+
+.disabled, [disabled]
+  opacity: 0.6
+  cursor: not-allowed
+
+.disabled
+  pointer-events: none
+
+.divider
+  border-top: $border
+  transform: scale(1, 0.5)
+
+.divider--text
+  display: inline-flex
+  align-items: center
+  width: 100%
+
+  &:before, &:after
+    content: ''
+    display: block
+    width: 100%
+    border-top: $border
+    flex: 1
+    transform: scale(1, 0.5)
+
+.full--width
+  width: 100%
+
+.win--width
+  width: 100vw
+
+.full--height
+  height: 100%
+
+.win--height
+  height: 100vh
+
+for item in inline block inline-block inline-flex none
+  .d--{item}
+    display: item
+
+for item in hidden visible
+  .d--{item}
+    visibility: item
+
+for item in left right none
+  .float--{item}
+    float: item
+
+.clear:after
+  content: ''
+  display: table
+  clear: both

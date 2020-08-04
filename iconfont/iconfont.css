@@ -1,0 +1,35 @@
+@font-face {
+    font-family: "iconfont";
+    src: url("./iconfont.eot?aea774d9967bd1b10985ea990ea46d62?#iefix") format("embedded-opentype"),
+url("./iconfont.woff2?aea774d9967bd1b10985ea990ea46d62") format("woff2"),
+url("./iconfont.woff?aea774d9967bd1b10985ea990ea46d62") format("woff"),
+url("./iconfont.ttf?aea774d9967bd1b10985ea990ea46d62") format("truetype"),
+url("./iconfont.svg?aea774d9967bd1b10985ea990ea46d62#iconfont") format("svg");
+}
+
+i[class^="&#x27;icon-"]:before, i[class*=" &#x27;icon-"]:before {
+    font-family: iconfont !important;
+    font-style: normal;
+    font-weight: normal !important;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.&#x27;icon-aa1a:before {
+    content: "\f101";
+}
+.&#x27;icon-aaa:before {
+    content: "\f102";
+}
+.&#x27;icon-bbb:before {
+    content: "\f103";
+}
+.&#x27;icon-ccc:before {
+    content: "\f104";
+}
+.&#x27;icon-tttt:before {
+    content: "\f105";
+}

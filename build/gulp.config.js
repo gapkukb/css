@@ -6,7 +6,7 @@ const config = {
     src,
     dist,
     html: {
-        src: src + '/*.html',
+        src: src + '/html/*.html',
         dist: dist
     },
     css: {
@@ -31,7 +31,7 @@ const config = {
         dist: dist + '/images',
     },
     copy: {
-        src: [src + '/font/*'],
+        src: [src + '/public/**/*.*'],
         dist
     }
 }

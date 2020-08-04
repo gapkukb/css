@@ -1,0 +1,170 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Frameset//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-frameset.dtd">
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- <meta http-equiv="X-UA-Compatible" content="ie=edge"> -->
+  <title>Document</title>
+  <link rel="stylesheet" href="./gm.min.css">
+  <style>
+    body {
+      padding: 10px
+    }
+
+    .col>div {
+      background-color: #ccc;
+    }
+
+    .container+.container {
+      margin-top: 20px;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>flex布局兼容到IE10</h1>
+  <div class="container">
+    <div class="row">
+      <div class="col col--auto">
+        <div>.col-auto</div>
+      </div>
+      <div class="col col--auto">
+        <div>.col-auto</div>
+      </div>
+      <div class="col col--auto">
+        <div>.col-auto</div>
+      </div>
+      <div class="col col--auto">
+        <div>.col-auto</div>
+      </div>
+      <div class="col col--auto">
+        <div>.col-auto</div>
+      </div>
+      <div class="col col--auto">
+        <div>.col-auto</div>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="col col--8">
+        <div>.col-8</div>
+      </div>
+      <div class="col col--8">
+        <div>.col-8</div>
+      </div>
+      <div class="col col--8">
+        <div>.col-8</div>
+      </div>
+      <div class="col col--8">
+        <div>.col-8</div>
+      </div>
+      <div class="col col--8">
+        <div>.col-8</div>
+      </div>
+      <div class="col col--8">
+        <div>.col-8</div>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <h1>gutter--xs</h1>
+    <div class="row gutter--xs">
+      <div class="col col--8">
+        <div>.col-8</div>
+      </div>
+      <div class="col col--8">
+        <div>.col-8</div>
+      </div>
+      <div class="col col--8">
+        <div>.col-8</div>
+      </div>
+      <div class="col col--8">
+        <div>.col-8</div>
+      </div>
+      <div class="col col--8">
+        <div>.col-8</div>
+      </div>
+      <div class="col col--8">
+        <div>.col-8</div>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <h1>gutter--lg</h1>
+    <div class="row gutter--lg">
+      <div class="col col--8">
+        <div>.col-8</div>
+      </div>
+      <div class="col col--8">
+        <div>.col-8</div>
+      </div>
+      <div class="col col--8">
+        <div>.col-8</div>
+      </div>
+      <div class="col col--8">
+        <div>.col-8</div>
+      </div>
+      <div class="col col--8">
+        <div>.col-8</div>
+      </div>
+      <div class="col col--8">
+        <div>.col-8</div>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <h1>offset</h1>
+    <div class="row gutter--sm">
+      <div class="col col--8">
+        <div>.col-8</div>
+      </div>
+      <div class="col col--8 offset--8">
+        <div>.col-8 offset--8</div>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <h1>justify--between</h1>
+    <div class="row justify--between">
+      <div class="col col--3">
+        <div>.col-8</div>
+      </div>
+      <div class="col col--3">
+        <div>.col-8</div>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <h1>justify--between align--center</h1>
+    <div class="row justify--between align--center">
+      <div class="col col--3">
+        <div>.col-8</div>
+      </div>
+      <div class="col col--3">
+        <div style="height: 100px;">.col-8</div>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <h1>order 顺序.</h1>
+    <div class="row justify--between align--center">
+      <div class="col col--6 at--last">
+        <div>.col-6 原来第一列</div>
+      </div>
+      <div class="col col--6">
+        <div>.col-6 原来第二列</div>
+      </div>
+      <div class="col col--6  at--first">
+        <div>.col-6 原来第三列</div>
+      </div>
+
+    </div>
+  </div>
+  <div class="divider"><span class="pad--sm-x">分割线</span></div>
+
+  <button class="button bg--blue">12</button>
+</body>
+
+</html>

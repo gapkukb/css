@@ -1,48 +1,18 @@
-for $point,$value in $points
-  if $value!=0
+$keys = keys($points)
+
+for $point, $value in $points
+  if ($value != 0)
+    $i = index($sizes, $point) - 1
+
     @media (min-width: $value)
-      grid($point)
+      for item in 1 .. $grid-count
+        +block('col')
+          +modifier($point, item)
+            width: tofixed(item)
 
+      .on--{$keys[$i]}
+        display: none
 
-
-
-
-
-
-
-
-
-    // for $item in xs sm md lg xl
-    //   for n in 1...$grid-count+1
-    //     $percent = tofixed(n)
-    //     .{BEM(col,$item,n)}
-    //       width: $percent
-    //     .{BEM(offset,$item,n)}
-    //       margin-left: $percent
-      // $v = lookup("$gutter-"+$item)
-      // .{BEM(gutter,$point,$item)}
-      //     margin-right: - $v
-      //     margin-bottom: - $v
-      //     &>.{BEM(col)}
-      //         padding-right: $v
-      //         padding-bottom: $v
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// @supports not (display:grid)
-
+    @media (max-width: $value)
+      .off--{$keys[$i + 1]}
+        display: none

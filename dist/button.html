@@ -1,0 +1,154 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Frameset//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-frameset.dtd">
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- <meta http-equiv="X-UA-Compatible" content="ie=edge"> -->
+  <title>Document</title>
+  <link rel="stylesheet" href="./gm.min.css">
+  <style>
+    body {
+      padding: 10px;
+    }
+
+    .container {
+      padding-bottom: 40px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <h4>按钮类型</h4>
+    <button class="button bg--blue">按钮类型</button>
+    <button class="button bg--orange">按钮类型</button>
+    <button class="button bg--amber">按钮类型</button>
+    <button class="button bg--red">按钮类型</button>
+    <button class="button">按钮类型</button>
+    <button class="button fg--blue border--current">按钮类型</button>
+  </div>
+  <div class="container">
+    <h4>禁用</h4>
+    <button class="button disabled bg--blue">.disable</button>
+    <button class="button bg--orange" disabled>[disable]</button>
+  </div>
+  <div class="container">
+    <h4>按钮大小</h4>
+    <button class="button bg--blue button--large">大号</button>
+    <button class="button bg--amber">默认</button>
+    <button class="button bg--blue button--small">小号</button>
+  </div>
+  <div class="container">
+    <h4>按钮 icon</h4>
+    <button class="button pad--none bg--blue radius">
+      <svg xmlns:xlink="http://www.w3.org/1999/xlink" width="1.5em" height="1.5em" viewBox="0 0 100 100">
+        <circle cx="50" cy="50" r="35" fill="none" stroke="#fff" stroke-width="6" stroke-dasharray="165 57"
+          stroke-linecap="round">
+          <animateTransform attributeName="transform" type="rotate" repeatCount="indefinite" dur="1s"
+            values="0 50 50;360 50 50" keyTimes="0;1" />
+        </circle>
+      </svg>
+    </button>
+    <button class="button pad--none bg--blue">
+      <svg xmlns:xlink="http://www.w3.org/1999/xlink" width="1.5em" height="1.5em" viewBox="0 0 100 100">
+        <circle cx="50" cy="50" r="35" fill="none" stroke="#fff" stroke-width="6" stroke-dasharray="165 57"
+          stroke-linecap="round">
+          <animateTransform attributeName="transform" type="rotate" repeatCount="indefinite" dur="1s"
+            values="0 50 50;360 50 50" keyTimes="0;1" />
+        </circle>
+      </svg>
+    </button>
+    <button class="button bg--blue">
+      <svg xmlns:xlink="http://www.w3.org/1999/xlink" width="1.5em" height="1.5em" viewBox="0 0 100 100">
+        <circle cx="50" cy="50" r="35" fill="none" stroke="#fff" stroke-width="6" stroke-dasharray="165 57"
+          stroke-linecap="round">
+          <animateTransform attributeName="transform" type="rotate" repeatCount="indefinite" dur="1s"
+            values="0 50 50;360 50 50" keyTimes="0;1" />
+        </circle>
+      </svg>
+      你说啥
+    </button>
+    <button class="button radius bg--blue">
+      <svg xmlns:xlink="http://www.w3.org/1999/xlink" width="1.5em" height="1.5em" viewBox="0 0 100 100">
+        <circle cx="50" cy="50" r="35" fill="none" stroke="#fff" stroke-width="6" stroke-dasharray="165 57"
+          stroke-linecap="round">
+          <animateTransform attributeName="transform" type="rotate" repeatCount="indefinite" dur="1s"
+            values="0 50 50;360 50 50" keyTimes="0;1" />
+        </circle>
+      </svg>
+      你说啥
+    </button>
+  </div>
+  <div class="container">
+    <h4>按钮 icon + 大小</h4>
+    <button class="button button--large pad--none bg--blue radius">+</button>
+    <button class="button pad--none bg--blue radius">+</button>
+    <button class="button button--small pad--none bg--blue radius">+</button>
+  </div>
+  <div class="container">
+    <h4>按钮组</h4>
+    <div class="button-group">
+      <button class="button button--large bg--blue">+</button>
+      <button class="button button--large bg--green">+</button>
+      <button class="button button--large bg--red">+</button>
+      <button class="button button--large bg--yellow">+</button>
+    </div>
+    <div class="button-group radius">
+      <button class="button button--large bg--blue">+</button>
+      <button class="button button--large bg--green">+</button>
+      <button class="button button--large bg--red">+</button>
+      <button class="button button--large bg--yellow">+</button>
+    </div>
+    <div class="button-group full-width radius">
+      <button class="button col--auto bg--blue">取消订单</button>
+      <button class="button col--auto bg--green">确认支付</button>
+    </div>
+  </div>
+  <div class="container">
+    <h4>下拉按钮 必须设置tabindex属性</h4>
+    <h5>完整用法</h5>
+    <form onchange="output.value=option.value">
+      <button type="button" class="button bg--blue dropdown" width="300">
+        <output name="output">取消订单</output>
+        <div class="dropdown--body dropdown--top-right full--width">
+          <label class="dropdown--item"><input type="radio" name="option" value="选项一">选项一</label>
+          <label class="dropdown--item"><input type="radio" name="option" value="选项二">选项二</label>
+          <label class="dropdown--item"><input type="radio" name="option" value="选项二">选项二</label>
+          <label class="dropdown--item"><input type="radio" name="option" value="选项二">选项二</label>
+          <label class="dropdown--item"><input type="radio" name="option" value="选项二">选项二</label>
+          <label class="dropdown--item"><input type="radio" name="option" value="选项二">选项二</label>
+          <label class="dropdown--item"><input type="radio" name="option" value="选项二">选项二</label>
+          <label class="dropdown--item"><input type="radio" name="option" value="选项二">选项二</label>
+          <label class="dropdown--item"><input type="radio" name="option" value="选项二">选项二</label>
+          <label class="dropdown--item"><input type="radio" name="option" value="选项三">选项三</label>
+        </div>
+      </button>
+    </form>
+    <h5></h5>
+    <form onchange="output.value=option.value" class="inline">
+      <button type="button" class="button bg--green dropdown" width="300">
+        <output name="output">取消订单</output>
+        <div class="dropdown--body dropdown--top-right full--width">
+          <label class="dropdown--item"><input type="radio" name="option" value="选项一">选项一</label>
+          <label class="dropdown--item"><input type="radio" name="option" value="选项二">选项二</label>
+          <label class="dropdown--item"><input type="radio" name="option" value="选项三">选项三</label>
+        </div>
+      </button>
+    </form>
+
+    <form onchange="output.value=option.value||'请选择'">
+      <button type="button" class="button button--small bg--green dropdown" width="300">
+        <output name="output">请选择</output>
+        <div class="dropdown--body dropdown--top-right full--width">
+          <label class="dropdown--item"><input type="radio" name="option" value="">不选</label>
+          <label class="dropdown--item"><input type="radio" name="option" value="选项一">选项一</label>
+          <label class="dropdown--item"><input type="radio" name="option" value="选项二">选项二</label>
+          <label class="dropdown--item"><input type="radio" name="option" value="选项三">选项三</label>
+        </div>
+      </button>
+    </form>
+  </div>
+</body>
+
+</html>

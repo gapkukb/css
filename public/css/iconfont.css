@@ -1,0 +1,25 @@
+@font-face {
+    font-family: "iconfont";
+    src:url("./iconfont.woff?5a3f94047af81f5a2b720a6ae6b1844f") format("woff")
+}
+
+i[class^="icon-"]:before, i[class*=" icon-"]:before {
+    font-family: iconfont !important;
+    font-style: normal;
+    font-weight: normal !important;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-aaa:before {
+    content: "\f101";
+}
+.icon-bbb:before {
+    content: "\f102";
+}
+.icon-ccc:before {
+    content: "\f103";
+}

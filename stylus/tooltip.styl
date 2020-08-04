@@ -2,7 +2,6 @@
     position: relative
     $distance = 'calc(100% + %s)' % $tooltip-margin
     $tooltip-margin = ($tooltip-margin / 2)
-    border: 1px solid blue
 
     +element(body)
         padding: $tooltip-padding
@@ -16,6 +15,7 @@
         visibility: hidden
         opacity: 0
         cursor: pointer
+        font-weight normal
         ~/:hover &
             // will-change: visibility, transform, opacity
             visibility: visible

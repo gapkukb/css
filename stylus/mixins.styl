@@ -1,2 +1,35 @@
 tofixed(n)
-    floor(percentage(n/$grid-count),2)
+    floor(percentage((n / $grid-count)), 2)
+
+$props($object)
+    for key, value in $object
+        {key}: value
+
+$dirs($prop, $prop2 = null, $value = null)
+    if (!$value)
+        $value = $prop2
+        $prop2 = ''
+
+    +modifier($prop2, xy)
+        {$prop}: $value
+
+    +modifier($prop2, x)
+        {$prop}-left: $value
+        {$prop}-right: $value
+
+    +modifier($prop2, y)
+        {$prop}-top: $value
+        {$prop}-bottom: $value
+
+    +modifier($prop2, t)
+        {$prop}-top: $value
+
+    +modifier($prop2, b)
+        {$prop}-bottom: $value
+
+    +modifier($prop2, l)
+        {$prop}-left: $value
+
+    +modifier($prop2, r)
+        {$prop}-right: $value
+

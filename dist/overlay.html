@@ -1,0 +1,86 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Frameset//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-frameset.dtd">
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- <meta http-equiv="X-UA-Compatible" content="ie=edge"> -->
+  <title>Document</title>
+  <link rel="stylesheet" href="./gm.min.css">
+  <style>
+    .popup{display: none;}
+    .button:focus+.popup{display: block;}
+  </style>
+</head>
+
+<body>
+
+<button class="button">基本弹窗</button>
+<div class="popup popup--show">
+  <div class="popup__main popup__main--center">
+    <div class="popup__header popup__header--border">
+      确认
+      <span class="popup__close">&#x2715</span>
+    </div>
+    <div class="popup__body">确认执行该操作吗？确认执行该操作吗？确认执行该操作吗？确认执行该操作吗？确认执行该操作吗？</div>
+    <div class="popup__footer popup__footer--border button-group">
+      <button class="button button--borderless button--block  button--large">取消</button>
+      <button class="button button--borderless button--block  button--large fg--blue">确定</button>
+    </div>
+  </div>
+</div>
+
+<button class="button">彩色</button>
+<div class="popup popup--show">
+  <div class="popup__main popup__main--center">
+    <div class="popup__header">确认</div>
+    <div class="popup__body">确认执行该操作吗？确认执行该操作吗？确认执行该操作吗？确认执行该操作吗？确认执行该操作吗？</div>
+    <div class="popup__footer popup__footer--border button-group">
+      <button class="button button--borderless button--block  button--large">取消</button>
+      <button class="button button--borderless button--block  button--large fg--blue">确定</button>
+    </div>
+  </div>
+</div>
+
+<button class="button">彩色</button>
+<div class="popup popup--show">
+  <div class="popup__main popup__main--center">
+    <div class="popup__header">确认</div>
+    <div class="popup__body">确认执行该操作吗？确认执行该操作吗？确认执行该操作吗？确认执行该操作吗？确认执行该操作吗？</div>
+    <div class="popup__footer button-group">
+      <button class="button button--block button--borderless button--large bg--blue-300">取消</button>
+      <button class="button button--block button--borderless button--large bg--blue">下一步</button>
+      <button class="button button--block button--borderless button--large bg--blue-700">确定</button>
+    </div>
+  </div>
+</div>
+
+<button class="button">彩色</button>
+<div class="popup popup--show">
+  <div class="popup__main popup__main--center">
+    <div class="popup__header">确认</div>
+    <div class="popup__body">确认执行该操作吗？确认执行该操作吗？确认执行该操作吗？确认执行该操作吗？确认执行该操作吗？</div>
+    <div class="popup__footer button-group">
+      <button class="button button--borderless button--block  button--large">取消</button>
+      <button class="button button--borderless button--block  button--large fg--blue">确定</button>
+    </div>
+  </div>
+</div>
+
+<button class="button">其他风格</button>
+<div class="popup popup--show">
+  <div class="popup__main popup__main--center">
+    <div class="popup__header row justify--between">
+      This is title
+      <span class="popup__close">&#x2715</span>
+    </div>
+    <div class="popup__body">确认执行该操作吗？确认执行该操作吗？确认执行该操作吗？确认执行该操作吗？确认执行该操作吗？</div>
+    <div class="popup__footer border row justify--end border--top">
+      <button class="button button--large">取消</button>
+      <button class="button button--large fg--blue">确定</button>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

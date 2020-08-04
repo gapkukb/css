@@ -1,17 +1,25 @@
-forfn(prefix,prop)
-    for $key,$value in $colors
-        if typeof($value)==object
-            for $sub-key,$sub-value in $value
-                .{BEM(prefix,$key,$sub-key)}
-                    {prop} $sub-value
-                if $sub-key=='500'
-                    .{BEM(prefix,$key)}
-                        {prop} $sub-value
-        else
-            .{BEM(prefix,$key)}
-                {prop} $value
++block(bg)
+    for $key, $value in $colors
+        if (typeof($value) == object)
+            for $sub-key, $sub-value in $value
+                +modifier($key, $sub-key)
+                    background-color: $sub-value
+                    border-color: $sub-value
+                    color: #fff if $sub-key>=300
 
-forfn(fgc,color);
-forfn(bgc,background-color);
-.bgc_current
-  background-color: currentColor;
+                if ($sub-key == '500')
+                    +modifier($key)
+                        background-color: $sub-value
+                        border-color: $sub-value
+                        color: #fff
+
++block(fg)
+    for $key, $value in $colors
+        if (typeof($value) == object)
+            for $sub-key, $sub-value in $value
+                +modifier($key, $sub-key)
+                    color: $sub-value
+
+                if ($sub-key == '500')
+                    +modifier($key)
+                        color: $sub-value

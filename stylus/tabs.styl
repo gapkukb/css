@@ -1,0 +1,11 @@
++block(tabs)
+  +element(tab)
+    display: none
+
+    ../
+      +element(main)
+        &>input
+          display: none
+
+          &:checked+^[1]
+            display: block

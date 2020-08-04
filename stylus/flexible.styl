@@ -1,41 +1,93 @@
+/* flex 支持到IE10 */
+.row
+    display: flex
+    flex-wrap: wrap
+    align-items: flex-start
 
-$items = $merge($justify-content, $align-items)
-
-for $k, $v in $justify-content
-  .{BEM(justify, , $k)}
-    justify-content: $v
-
-  .{BEM(self, v, $k)}
-    justify-content: $v
-
-for $k, $v in $align-items
-  .{BEM(items, , $k)}
-    align-items: $v
-
-  .{BEM(self, h, $k)}
-    align-items: $v
-
-for $k, $v in $items
-  .{BEM(content, , $k)}
-    align-content: $v
-
-+block(row)
-  display: flex
-  flex-wrap: wrap
-  align-items: flex-start
-  &:after
-    content: ''
-    display: table
-    clear: both
-
-  +modifier(inline)
+.row.inline
     display: inline-flex
 
-.col
-  float: left
-  min-width: 1px
++block(col)
+    float: left
+    min-width: 0
 
-.{BEM(gutter, , spacing)}
-  margin: 0
+    +modifier(auto)
+        flex: 1
 
-grid()
+    for item in 1 .. $grid-count
+        +modifier(item)
+            width: tofixed(item)
+
++block(offset)
+    for item in 1 .. $grid-count
+        +modifier(item)
+            margin-left: tofixed(item)
+
++block(gutter)
+    for item in $sizes
+        +modifier(item)
+            $value = lookup('$gutter-' + item)
+            margin-right: - $value
+            margin-bottom: - $value
+
+            &>.col
+                padding-right: $value
+                padding-bottom: $value
+
+.col--auto
+    flex: 1
+
++block(justify)
+    for item, value in $justify-content
+        +modifier(item)
+            justify-content: value
+
+    +modifier('last', left)
+        &:after
+            content: ''
+            flex: 1
+
++block(align)
+    for item, value in $align-items
+        +modifier(item)
+            align-items: value
+
++block(content)
+    for item, value in $align-items
+        +modifier(item)
+            align-content: value
+
++block(pull)
+    +modifier(center)
+        margin: auto
+
+    +modifier(right)
+        margin-left: auto
+
+    +modifier(left)
+        margin-right: auto
+
+    +modifier(top)
+        margin-bottom: auto
+
+    +modifier(bottom)
+        margin-top: auto
+
+    +modifier(center, y)
+        margin: auto 0
+
+    +modifier(center, x)
+        margin: 0 auto
+
++block(at)
+    +modifier(1)
+        order: -3
+
+    +modifier(2)
+        order: -2
+
+    +modifier(3)
+        order: -1
+
+    +modifier('last')
+        order: 999

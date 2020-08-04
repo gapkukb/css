@@ -1,0 +1,113 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Frameset//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-frameset.dtd">
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- <meta http-equiv="X-UA-Compatible" content="ie=edge"> -->
+  <title>Document</title>
+  <link rel="stylesheet" href="./gm.min.css">
+  <style>
+    .test {
+      padding: 20px;
+    }
+
+    .wrap {
+      width: 456px;
+      overflow: hidden;
+      white-space: nowrap;
+      word-break: break-word;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="test">
+    <div class="wrap">
+      <div class="e-table" border="0" frame="box" rules="all">
+
+      </div>
+    </div>
+  </div>
+
+</body>
+<script>
+  (function () {
+    if (typeof window.CustomEvent === 'function') return false;
+    function CustomEvent(event, params) {
+      params = params || { bubbles: false, cancelable: false, detail: undefined };
+      var evt = document.createEvent('CustomEvent');
+      evt.initCustomEvent(event, params.bubbles, params.cancelable, params.detail);
+      return evt;
+    }
+    CustomEvent.prototype = window.Event.prototype;
+    window.CustomEvent = CustomEvent;
+  })();
+
+
+  var CEvent = new CustomEvent('resizeTo')
+  window.onresize = function () {
+    if (this.innerWidth <= 500) {
+      CEvent.size = 'abcs'
+      document.dispatchEvent(CEvent)
+    }
+  }
+
+  document.addEventListener('resize2', function (e) {
+    console.log(e.size);
+  }, { passive: false })
+
+
+
+  // Array.prototype.defaut = function (defalutValue) {
+  //   let i = this.length
+  //   while (i--) {
+  //     this[i] = defalutValue;
+  //   }
+  //   return this;
+  // }
+  // class Luzitu {
+  //   static body = document.querySelector('.e-table')
+  //   static update() {
+  //     this.body.innerHTML += `<div class="e-col">
+  //         <div class="e-cell">2</div>
+  //         <div class="e-cell">2</div>
+  //         <div class="e-cell">2</div>
+  //         <div class="e-cell">2</div>
+  //         <div class="e-cell">2</div>
+  //         <div class="e-cell">2</div>
+  //       </div>`
+  //     this.body.classList.add('active')
+  //   }
+
+  //   static render() {
+  //     this.body.innerHTML = new Array(19).defaut(0).map(item => `<div class="e-col">
+  //         <div class="e-cell">1</div>
+  //         <div class="e-cell">1</div>
+  //         <div class="e-cell">1</div>
+  //         <div class="e-cell">1</div>
+  //         <div class="e-cell">1</div>
+  //         <div class="e-cell">1</div>
+  //       </div>`).join("")
+
+  //   }
+
+  //   static init() {
+  //     this.render()
+  //     setInterval(() => {
+  //       this.update()
+
+  //     }, 4000);
+
+  //     this.body.ontransitionend = () => {
+  //       this.body.removeChild(this.body.firstElementChild)
+  //       this.body.classList.remove("active")
+  //     }
+  //   }
+
+
+  // }
+  // Luzitu.init()
+</script>
+
+</html>

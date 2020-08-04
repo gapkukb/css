@@ -4,6 +4,7 @@
   "description": "A super lightweight google material-style responsive pure CSS library",
   "main": "dist/gm.min.css",
   "scripts": {
+    "iconfont": "node ./node_modules/del-cli/cli.js iconfont/* && node ./node_modules/icon-font-generator/bin/icon-font-generator svgs/*.svg -o iconfont -n iconfont -p 'icon icon--'",
     "dev": "cross-env NODE_ENV=development gulp",
     "build": "gulp"
   },
@@ -20,6 +21,7 @@
     "gulp": "^4.0.0",
     "gulp-autoprefixer": "^6.0.0",
     "gulp-babel": "^8.0.0",
+    "gulp-changed": "^4.0.2",
     "gulp-clean-css": "^4.0.0",
     "gulp-concat": "^2.6.1",
     "gulp-if": "^2.0.2",
@@ -30,6 +32,7 @@
     "stylus-bem-sugar": "^1.0.4"
   },
   "dependencies": {
-    "@babel/runtime": "^7.3.1"
+    "@babel/runtime": "^7.3.1",
+    "icon-font-generator": "^2.1.10"
   }
 }

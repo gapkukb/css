@@ -1,48 +1,98 @@
 +block(button)
-    border: 1px solid transparent
-    cursor: pointer
-    transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1)
-    user-select: none
-    touch-action: manipulation
-    border-radius: 2px
-    border-color: #d9d9d9
-    padding: ($button-padding / 2) $button-padding * 1.5
     height: $button-default-height
-    min-width: $button-default-height
-    display: inline-flex
+    min-width: @height
+    padding: 0 0.8em
+    border-radius: $global-border-radius
+    text-transform: uppercase
+    // border: $border
+    transition: opacity 0.2s
+    cursor: pointer
+    line-height: 1
+    user-select: none
 
-    &
-        @extend .justify--center
-        @extend .items--center
-
-    +modifier(icon, only)
-        padding: 0
-
+    // &:focus
+    // box-shadow: 0 0 4px 0px rgba(0, 0, 0, 0.5)
+    // position: relative
+    // z-index: 9
     +modifier(small)
-        min-width: $gutter-md
-        height: $gutter-md
-        padding: 0 $button-padding * 1.5
+        height: $button-small-height
+        min-width: @height
+        font-size: 12px
+
     +modifier(large)
-        min-width: $gutter-xl
-        height: $gutter-xl
-        padding: 6px $button-padding * 1.5
-
-    +modifier('round')
-        border-radius: 9999px
-
-    for $item in xs sm md lg xl
-        +modifier('round', $item)
-            border-radius: lookup('$gutter-' + $item)
-
-    +modifier('block')
-        display: block
-        width: 100%
-
-
-    +element(icon)
-        margin-right: ($gutter-xs / 2)
+        height: $button-large-height
+        min-width: @height
+        font-size: 16px
 
 +block(button-group)
-    display: flex
-    color: #EAC59D
-    color: gold
+    display: inline-flex
+    overflow: hidden
+    border-radius: $global-border-radius
+    // -webkit-mask-image: -webkit-radial-gradient(white, black);
+    transform: translateZ(0)
+
+    >.button
+        border-radius: 0
+
++block(dropdown)
+    position: relative
+
+    &:after
+        content: ''
+        display: inline-block
+        border: 0.4em solid transparent
+        transform: translateY(0.2em)
+        border-top-color: currentColor
+
+    +modifier(body)
+        display: none
+        position: absolute
+        border-radius: $global-border-radius
+        border: $border
+        color: inherit
+        line-height: 2em
+        background-color: inherit
+        z-index 2
+        max-height 100px
+        overflow hidden auto
+        overscroll-behavior: contain;
+
+        ^[0]:focus>&
+            display: block
+
+    +modifier(top, left)
+        bottom: 100%
+        left: 0px
+
+    +modifier(top, right)
+        bottom: 100%
+        right: 0px
+
+    +modifier(btm, left)
+        top: 100%
+        left: 0px
+
+    +modifier(btm, right)
+        top: 100%
+        right: 0px
+
+    +modifier(item)
+        position: relative
+        display block
+        cursor pointer
+        &:after
+            content: ''
+            position: absolute
+            pointer-events: none
+            left: 0px
+            right: 0px
+            top: 0px
+            bottom: 0px
+            display none
+            background-color rgba(0, 0, 0, 0.1)
+
+        &-active:after,&:hover:after
+            display block
+:checked~:after
+    display block !important
+
